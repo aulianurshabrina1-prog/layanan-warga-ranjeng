@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layanan - Layanan Warga Kelurahan & Desa Ranjeng</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><div class="wrap bar">
+    <a class="logo" href="beranda.html"><i aria-hidden="true">🏛</i>Layanan Warga Ranjeng</a>
+    <nav aria-label="Menu utama">
+      <a href="beranda.html">Beranda</a>
+      <a href="tentang.html">Tentang</a>
+      <a href="layanan.html" aria-current="page">Layanan</a>
+      <a href="berita.html">Berita</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+  </div></header>
+
+  <main class="wrap page">
+    <h1>Layanan warga</h1>
+    <p>Pilih layanan untuk melihat persyaratannya.</p>
+    <details open><summary><span aria-hidden="true">📄</span>Surat pengantar</summary><ul><li>Fotokopi KTP dan KK</li><li>Surat pengantar RT/RW</li><li>Waktu proses 1 hari kerja</li></ul></details>
+    <details><summary><span aria-hidden="true">🏠</span>Domisili dan KK</summary><ul><li>KK asli</li><li>Surat pindah (jika baru datang)</li><li>Waktu proses 3 hari kerja</li></ul></details>
+    <details><summary><span aria-hidden="true">🤝</span>Bantuan sosial</summary><ul><li>KTP dan KK</li><li>Surat keterangan tidak mampu</li><li>Waktu proses 3 hari kerja</li></ul></details>
+    <div class="sec"><h2>Sampaikan pengaduan</h2>
+      <div class="field"><label for="n">Nama</label><input id="n" autocomplete="name"></div>
+      <div class="field"><label for="k">Jenis masalah</label><select id="k"><option>Jalan rusak</option><option>Sampah</option><option>Layanan kantor</option><option>Lainnya</option></select></div>
+      <div class="field"><label for="m">Ceritakan masalahnya</label><textarea id="m" rows="4"></textarea></div>
+      <button class="btn" id="send">Kirim pengaduan</button>
+      <div class="ok" id="ok" role="status">Pengaduan terkirim. Kami akan menghubungi kamu dalam 2 hari kerja.</div>
+    </div>
+  </main>
+
+  <footer><div class="wrap">© 2026 Kelurahan & Desa Ranjeng.</div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

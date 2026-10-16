@@ -1,0 +1,76 @@
+/* ===== Warna dan ukuran dasar (konsisten di semua halaman) ===== */
+:root{--bg:#f4f7fb;--surface:#ffffff;--ink:#14213d;--muted:#51607a;--brand:#23418a;--brand-ink:#ffffff;--accent:#f28c28;--accent-ink:#14213d;--line:#d9e1ee;--soft:#e6edfa}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1526;--surface:#162038;--ink:#e9eefb;--muted:#9fb0d0;--brand:#7f9cf0;--brand-ink:#0d1526;--line:#2a3857;--soft:#1d2a4a;color-scheme:dark}}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 "Plus Jakarta Sans",system-ui,sans-serif}
+h1,h2,h3{line-height:1.2;margin:0 0 .5em;font-weight:800}
+h1{font-size:clamp(2rem,5.5vw,3.4rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.4rem,3vw,1.9rem)}
+h3{font-size:1.1rem;font-weight:600}
+p{margin:0 0 1em;max-width:60ch}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.page{padding:56px 0 72px}
+.sec{margin-top:72px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+/* ===== Header dan menu ===== */
+header{position:sticky;top:0;background:var(--surface);border-bottom:1px solid var(--line);z-index:5}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;flex-wrap:wrap}
+.logo{font-weight:800;color:var(--brand);display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo i{width:32px;height:32px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-style:normal}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font-weight:600;padding:10px 16px;min-height:44px;display:flex;align-items:center;border-radius:8px}
+nav a:hover{background:var(--soft)}
+nav a[aria-current="page"]{background:var(--soft);color:var(--brand);box-shadow:inset 0 -3px 0 var(--accent)}
+
+/* ===== Tombol dan kartu ===== */
+.btn{font:600 1.05rem "Plus Jakarta Sans",sans-serif;padding:14px 24px;min-height:52px;border-radius:12px;border:0;background:var(--accent);color:var(--accent-ink);cursor:pointer}
+.btn:hover{filter:brightness(.95)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tile{background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:24px 18px;text-align:center;color:var(--ink);text-decoration:none}
+.tile:hover{border-color:var(--brand)}
+.tile span{display:block;font-size:2.2rem;margin-bottom:10px}
+.tile b{font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:grid;gap:4px}
+.item h3{margin:0}
+.item p{margin:0;color:var(--muted)}
+.item time{color:var(--brand);font-weight:600;font-size:.95rem}
+.tag{justify-self:start;background:var(--soft);color:var(--brand);font-weight:600;font-size:.9rem;padding:2px 12px;border-radius:999px}
+.news{display:grid;gap:14px}
+
+/* ===== Beranda ===== */
+.hero{text-align:center;max-width:720px;margin:0 auto}
+.hero p{margin-left:auto;margin-right:auto;color:var(--muted);font-size:1.15rem}
+.search{display:flex;gap:10px;margin:28px auto 0;max-width:560px}
+.search input{flex:1;min-width:0;font:inherit;padding:14px 18px;min-height:52px;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink)}
+.info{background:var(--brand);color:var(--brand-ink);border-radius:20px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.info h2,.info p{margin:0}
+
+/* ===== Tentang ===== */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--brand);color:var(--brand-ink);font-weight:800;margin-bottom:12px}
+.step p{margin:0;color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+
+/* ===== Layanan dan Kontak ===== */
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:12px}
+summary{padding:18px 20px;min-height:56px;font-weight:600;cursor:pointer;display:flex;gap:12px;align-items:center}
+details[open] summary{color:var(--brand)}
+details ul{margin:0;padding:0 20px 18px 42px;color:var(--muted)}
+.field{display:grid;gap:6px;margin-bottom:16px;max-width:520px}
+.field label{font-weight:600}
+.field input,.field textarea,.field select{font:inherit;padding:12px 14px;border-radius:10px;border:2px solid var(--line);background:var(--surface);color:var(--ink)}
+.ok{display:none;margin-top:16px;padding:14px 18px;border-radius:12px;background:var(--soft);color:var(--brand);font-weight:600;max-width:520px}
+
+/* ===== Berita (tabel agenda) ===== */
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line)}
+th{background:var(--soft)}
+
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.95rem}
+
+/* ===== Tampilan HP ===== */
+@media (max-width:760px){.grid,.cards{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}.steps,.two,.info{grid-template-columns:1fr}.search{flex-direction:column}.page{padding:36px 0 56px}}
